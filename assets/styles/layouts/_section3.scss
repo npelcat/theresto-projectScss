@@ -1,0 +1,123 @@
+.section3 {
+    padding: 100px 15px 65px;
+    color: $white1;
+
+    .form-content {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        background: $white1;
+        max-width: 1050px;
+        margin: 0 auto;
+
+        @media screen and (max-width:850px) {
+            grid-template-columns: 1fr;
+        }
+
+        .hours {
+            padding: 24px;
+            background: black;
+
+            .hours-content {
+                border: 1px dashed $color1;
+                padding: 20px;
+
+                h3 {
+                    font-family: $font1;
+                    font-size: 2.5rem;
+                    font-weight: 100;
+                    color: $color1;
+                }
+                h4 {
+                    font-family: $font2;
+                    margin-top: -16px;
+                    letter-spacing: 2px;
+                    font-size: 1.3rem;
+                }
+                img {
+                    margin-top: 25px;
+                }
+                h5 {
+                    text-transform: uppercase;
+                    color: $color1;
+                    font-family: $font2;
+                    font-weight: 100;
+                    font-size: 1.1rem;
+                    margin: 38px 0 12px;
+                }
+                p{
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .form-infos {
+            @include centerChild;
+            padding: 30px 0;
+
+            h2 {
+                font-family: $font1;
+                font-size: 2.5rem;
+                font-weight: 100;
+                color: $color1;
+            }
+            h3 {
+                color: $black1;
+                margin-top: -18px;
+                font-family: $font2;
+                font-size: 1.8rem;
+            }
+            img {
+                margin: 25px;
+            }
+
+            .form-inputs {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-bottom: 30px;
+
+                @media screen and (max-width:680px) {
+                    grid-template-columns: 1fr;
+                }
+
+                // Le selecteur "*" et la ">" veut dire : tous tes enfants directs !
+                > * {
+                    padding: 10px 0;
+                    margin: 10px;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.6);
+                    transition: 0.2s ease;
+
+                    &:focus {
+                        color: $color1;
+                        border-bottom: 1px solid $color1;
+                        transform: scale(1.1);
+            
+                        &::placeholder {
+                          color: $color1;
+                        }
+                      }
+                }
+            }
+
+            button {
+                border: none;
+                border-radius: 50px;
+                background-color: $black1;
+                color: $white1;
+                padding: 16px 34px;
+                letter-spacing: 4px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    transform: translateY(5px);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                    background: $color1;
+                }
+            }
+        }
+    }
+}

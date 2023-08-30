@@ -1,0 +1,49 @@
+.section5 {
+    padding: 70px 0 230px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        height: 350px;
+        width: 100%;
+        background: url(../img/gmap.jpg) center/cover;
+        left: 0;
+        bottom: 0;
+    }
+    // Pour voir un élément : si le z-index ne fonctionne pas et ne le met pas devant, vérifier les positions : si un élément en position absolute, mettre celui que l'on veut voir en position relative.
+    .quote-container {
+        background: $white1;
+        position: relative;
+        z-index: 100;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 65px 70px;
+        width: 90%;
+        box-shadow: 2px 2px 3px $color1;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: url(../img/avatar-02.jpg) center/cover;
+            height: 100px;
+            width: 100px;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 150px;
+        }
+        .text-container {
+            line-height: 30px;
+        }
+
+        h2 {
+            margin: 30px 0 15px;
+            font-family: $font3;
+            font-weight: 100;
+        }
+        p {
+            color: $color1 ;
+        }
+    }
+}

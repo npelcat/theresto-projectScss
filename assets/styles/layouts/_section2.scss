@@ -1,0 +1,108 @@
+.section2 {
+    color: $white1;
+    padding-bottom: 100px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 620px;
+        width: 100%;
+        left: 50%;
+        bottom: -330px;
+        transform: translate(-50%, -50%);
+        background: url(../img/store-01.jpg) center/cover;
+    }
+
+    h2 {
+        color: $color1;
+        font-size: 2.5rem;
+        font-family: $font1;
+        font-weight: 500;
+        padding: 60px 0 30px ;
+    }
+
+    ul {
+        @include alignChildren(space-around);
+        width: 50%;
+        margin: 30px auto;
+        min-width: 500px;
+
+        @media screen and (max-width:680px) {
+            min-width: 200px;
+            width: 90%;
+            font-size: 0.7rem;
+        }
+
+        li {
+            border-bottom: 1px solid $grey1;
+            padding-bottom: 8px;
+            transition: 0.3s ease-in;
+
+            &:hover {
+                cursor: pointer;
+                color: $color1;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .meals {
+        background: $white1;
+        color: $black1;
+        width: 85%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-top: 4px solid $color1;
+        padding: 15px 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        z-index: 1000;
+        position: relative;
+
+        @media screen and (max-width:680px) {
+            grid-template-columns: 1fr;
+        }
+
+        .meal {
+            display: grid;
+            grid-template-columns: 25% 60% 15%;
+            border-bottom: 1px dashed $grey1;
+            padding: 30px 0;
+            margin: 0 20px;
+
+            img {
+                border-radius: 150px;
+                // OBJECT FIT COVER : quand l'image est en HTML, même fonctionnement que le cover pour l'image en background par exemple.
+                object-fit: cover;
+                width: 100%;
+                align-self: center;
+            }
+
+            .meal-text {
+                display: flex;
+                justify-content: center;
+                text-align: left;
+                flex-direction: column;
+                margin: 0 10px ;
+                height: 100%;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                color: $black1;
+                font-size: 0.8rem;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+// Le selecteur ">" désigne l'enfant direct !
+            > p {
+                color: $color1;
+                font-weight: 600;
+                display: grid;
+                height: 100%;
+                align-items: center;
+            }
+        }
+    }
+}

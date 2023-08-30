@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "allura";
+    src: url(../fonts/Allura-Regular.ttf);
+}
+@font-face {
+    font-family: "poppins";
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: "roboto";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+$font1: allura, cursive;
+$font2: poppins, serif;
+$font3: roboto, serif;
+
+$white1: #eee;
+$black1: #21201e;
+$grey1: rgb(182, 182, 182);
+$color1: rgb(47, 107, 64);
+
+@mixin centerChild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// LE $SPACE DANS LA MIXIN (paramètre) : permet de signaler une donnée non-connue : on peut la changer comme on veut quand on appelle la mixin.
+@mixin alignChildren ($space) {
+    display: flex;
+    align-items: center;
+    justify-content: $space;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    // Les boites côte à côte se terminent tout le temps au même niveau : 
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+body {
+    text-align: center;
+    font-family: $font3;
+    background: $black1;
+}

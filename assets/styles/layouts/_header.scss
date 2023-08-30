@@ -1,0 +1,174 @@
+header {
+    background: url(../img/bg-slider-06.jpg) center/cover;
+    padding: 0 50px;
+    color: $white1;
+
+    nav {
+        height: 12vh;
+        display: grid;
+        grid-template-columns: 10% 82% 8%;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        @media screen and (max-width:680px) {
+            grid-template-columns: 50% 10% 40%;
+        }
+
+        .logo {
+            font-family: $font1;
+            font-weight: 100;
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        ul {
+            @include alignChildren (space-around);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            padding: 0 30px;
+
+            @media screen and (max-width:680px) {
+                visibility: hidden;
+            }
+
+            li {
+                transition: 0.3s ease;
+                border-bottom: 1px solid transparent;
+                margin-top: 15px;
+                padding: 5px 10px;
+                
+                &:after {
+                  content: "";
+                  display: block;
+                  margin: 3px 0;
+                  width: 0;
+                  height: 1px;
+                  background: $color1;
+                  transition: width 0.3s;
+                }
+                &:hover:after {
+                  width: 100%;
+                }
+                &:hover {
+                  transform: scale(1.1);
+                  cursor: pointer;
+                  background-color: rgba(0, 0, 0, 0.226);
+                  border-radius: 40px;
+                }
+            }
+            
+        }
+
+    }
+        .nav-icons {
+            @include alignChildren (space-around);
+            font-size: 0.8rem;
+
+            i {
+                transition: 0.3s;
+
+                &:hover {
+                    transform: scale(1.5);
+                    cursor: pointer;
+                }
+            }
+        }
+    
+
+    .header-text {
+        @include centerChild;
+        height: 88vh;
+
+        div {
+            margin-top: -150px;
+
+            h2 {
+                font-family: $font1;
+                font-size: 3rem;
+                font-weight: 100;
+                color: $color1;
+                background-color: rgba(255, 255, 255, 0.4);
+                border-radius: 80px;
+                padding: 10px 0;
+                backdrop-filter: blur(2px);
+
+// SUPER-PROPRIETE ANIMATION : nom de l'anim + durée + style + moment où elle débute + nombre de répétition + se termine ou non :
+                animation: animH2 2s ease-out 0s 1 normal forwards;
+                
+                @keyframes animH2 {
+                  0% {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                  }
+                
+                  100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                
+                @media screen and (max-width:680px) {
+                    padding: 0;
+                }
+            }
+
+            h1 {
+                font-size: 3.2rem;
+                letter-spacing: 10px;
+                font-weight: 700;
+                margin-top: -40px;
+                font-family: $font2;
+                z-index: 100;
+                position: relative;
+
+                animation: animH1 2s ease-out 0s 1 normal forwards;
+                
+                @keyframes animH1 {
+                    0% {
+                    opacity: 0;
+                    transform: translateX(100px);
+                    }
+                
+                    100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                    }
+                }
+
+                @media screen and (max-width:680px) {
+                    font-size: 2rem;
+                    padding: 13px;
+                }
+            }
+            img {
+                height: 50px;
+                margin: 32px 0;
+            }
+            h6 {
+                font-size: 0.75rem;
+                letter-spacing: 6px;
+                font-weight: 100; 
+                padding: 10px;
+                opacity: 0;
+                background-color: rgba(47, 107, 64, 0.50);
+                border-radius: 80px;
+                backdrop-filter: blur(1px);
+
+                animation: animH6 2s ease-out 2s 1 normal forwards;
+                
+                @keyframes animH6 {
+                    0% {
+                    opacity: 0;
+                    transform: translateY(100px);
+                    }
+                
+                    100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+}
